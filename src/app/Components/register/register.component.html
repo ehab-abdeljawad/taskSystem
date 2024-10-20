@@ -1,0 +1,98 @@
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center bj">
+   <div class=" p-5 formbg ">
+<form method="post" #registerform="ngForm" class="outline-success" (ngSubmit)="onSubmit(registerform)">
+    <h2 class="text-warning">Register Now</h2>
+    <br>
+    <div class="form-floating mb-3" >
+      <label for="fullname">Full Name:</label>
+      <input
+        id="fullname"
+        type="text"
+        class="form-control"
+        name="fullname"
+        [(ngModel)]="userinformation.userName"
+        required
+        #inpfullname="ngModel"
+      />
+      <div [hidden]="inpfullname.valid || inpfullname.untouched">
+        <small *ngIf="inpfullname.errors?.['required']" class="alert alert-danger">
+          This field is required.
+        </small>
+      </div>
+    </div>
+  
+    <div class="form-floating mb-3">
+      <label for="email">Email:</label>
+      <input
+        id="email"
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="userinformation.userEmail"
+        required
+        #inpemail="ngModel"
+      />
+      <div [hidden]="inpemail.valid || inpemail.untouched">
+        <small *ngIf="inpemail.errors?.['required']" class="alert alert-danger">
+          Email is required.
+        </small>
+        <small *ngIf="inpemail.errors?.['email']" class="alert alert-danger">
+          Invalid email format.
+        </small>
+      </div>
+    </div>
+  
+    <div class="form-floating mb-3">
+      <label for="password">Password:</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        class="form-control"
+        [(ngModel)]="userinformation.password"
+        #passwordModel="ngModel"
+        required
+        minlength="6"
+      />
+      <div [hidden]="passwordModel.valid || passwordModel.untouched">
+        <small *ngIf="passwordModel.errors?.['required']" class="alert alert-danger">
+          Password is required.
+        </small>
+        <small *ngIf="passwordModel.errors?.['minlength']" class="alert alert-danger">
+            Password minlength is 6 charcter.
+          </small>
+      </div>
+    </div>
+  
+    <div class="form-floating mb-3">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input
+        id="confirmPassword"
+        type="password"
+        name="confirmPassword"
+        class="form-control"
+        [(ngModel)]="userinformation.confirmPassword"
+        required
+        minlength="6"
+        #confirmPasswordModel="ngModel"
+        appMustMatch="password"
+      />
+      <div [hidden]="confirmPasswordModel.valid || confirmPasswordModel.untouched">
+        <small *ngIf="confirmPasswordModel.errors?.['mustMatch'] && confirmPasswordModel.touched" class="alert alert-danger" >
+          Passwords do not match.
+        </small>
+        <small *ngIf="confirmPasswordModel.errors?.['required']" class="alert alert-danger">
+          Confirm password is required.
+        </small>
+        <small *ngIf="passwordModel.errors?.['minlength']" class="alert alert-danger">
+            Password minlength is 6 charcter.
+          </small>
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-warning text-light" [disabled]="registerform.invalid">Register</button>
+  </form>
+</div>
+  
+</div>
+  

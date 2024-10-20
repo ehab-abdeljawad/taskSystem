@@ -1,0 +1,19 @@
+<div class="sidebar app-sidebar">
+  <nav class="nav flex-column">
+    <div *ngIf="username">
+      <h5 class="text-white p-4">Welcome, {{ username }}</h5>
+    </div>
+    <ul class="text-light">
+      <li>
+    <a class="nav-link p-4" routerLink="/tasklist">Tasks</a></li>
+    <li>
+    <a class="nav-link p-4" routerLink="/addTask"> new task</a>
+  </li>
+  </ul>
+    <div *ngIf="username !='' && username !=undefined">
+      <div class="justify-content-center d-flex">
+    <button class="btn btn-danger mt-3 ml-3" (click)="logout()">Logout</button>
+  </div>
+  </div>
+  </nav>
+</div>

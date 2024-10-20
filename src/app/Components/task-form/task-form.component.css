@@ -1,0 +1,16 @@
+.component-background
+{
+    background-image: url('../../../assets/pexels-polina-kovaleva-5717406.jpg');
+    background-size: cover; /* To make the image cover the whole component */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Avoid image repetition */
+    
+  }
+
+  .formbg{
+    background-color:rgba(0, 0, 0, 0.5);;
+    border-radius: 20px;
+    
+  }
+  
+  

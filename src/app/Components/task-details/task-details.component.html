@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card square-card">
+      <div class="card-body text-center">
+        
+        <h5 class="card-title">{{ Data.titel }}</h5>
+        <p class="card-text">{{  Data.description }}</p>
+        <p class="card-text">
+          <small class="text-muted">Due Date: {{  Data.dueDate | date:'shortDate' }}</small>
+        </p>
+        <p class="card-text">
+          <small class="text-muted">Status: 
+            <span *ngIf=" Data.isCompleted; else notCompleted" class="text-success">Completed</span>
+            <ng-template #notCompleted><span class="text-danger">Not Completed</span></ng-template>
+          </small>
+        </p>
+        <!-- Buttons -->
+        <a class="btn btn-primary m-2" [routerLink]="['addTask',Data.id]" >Update</a>
+        <button class="btn btn-danger m-2" (click)="DelateTask(Data.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  

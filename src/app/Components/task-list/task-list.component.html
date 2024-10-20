@@ -1,0 +1,35 @@
+
+
+
+<div class="container mt-5">
+    <h1 class="text-muted text-center">My Tasks</h1>
+    <div class="row " >
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-3" *ngFor="let d of Data" >
+        <div class="card card-outline">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{d.titel}}</h5>
+            <p class="card-text">{{d.description}}</p>
+            <p class="card-text">
+                <small class="text-muted">Due Date: <span class="text-primary">{{d.
+                    dueDate
+                    }}</span></small>
+              </p>
+            <p class="card-text">
+                <small class="text-muted">Status: 
+                    <!-- Conditionally display the status -->
+                    <span *ngIf="d.isCompleted; else notCompleted" class="text-success">Completed</span>
+                    <ng-template #notCompleted><span class="text-danger">Not Completed</span></ng-template>
+                  </small>
+            </p>
+            
+            <a class="btn btn-warning text-center text-light" [routerLink]="['details',d.id]">show more Details</a>
+        
+          </div>
+        </div>
+      </div>
+  
+      
+    </div>
+  </div>
+  

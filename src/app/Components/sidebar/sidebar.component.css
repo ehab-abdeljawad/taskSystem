@@ -1,0 +1,29 @@
+/* Styling the sidebar */
+.sidebar {
+    background-color: #28a745; /* Green background */
+    height: 100vh; /* Full height */
+    padding-top: 20px;
+  }
+  
+  .nav-link {
+    font-size: 1.2em;
+    padding: 10px;
+    color: #f8f9fa !important; /* Light text color */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect for the links */
+  .nav-link:hover {
+    background-color: #218838; /* Darker green on hover */
+    color: #ffffff !important; /* Ensure text stays white */
+  }
+  
+  /* Active link styling */
+  .nav-link.active {
+    font-weight: bold;
+    background-color: #1e7e34; /* Darker shade for active link */
+    color: #ffffff !important;
+    padding: 20px;
+  }
+ 
+  

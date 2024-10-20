@@ -1,0 +1,31 @@
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center bj">
+  <div class=" p-5 formbg">
+  <form action="" (ngSubmit)="getuser()" #userform="ngForm" class="w-150 ">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="username" name="username" 
+             required [(ngModel)]="infouser.username" #inpuser="ngModel">
+      <label for="floatingInput">Username</label>
+
+      <div [hidden]="inpuser.valid || inpuser.untouched">
+        <small *ngIf="inpuser.errors?.['required']" class="alert alert-danger">Username is required.</small>
+      </div>
+    </div>
+      
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" 
+             required [(ngModel)]="infouser.password" #inppassword="ngModel">
+      <label for="floatingPassword">Password</label>
+
+      <div [hidden]="inppassword.valid || inppassword.untouched">
+        <small *ngIf="inppassword.errors?.['required']" class="alert alert-danger">Password is required.</small>
+      </div>
+    </div>
+
+    <button class="btn btn-warning text-light w-100" [disabled]="userform.invalid">Login</button>
+    <div class="text-center">
+      <a class="nav-link p-4 text-primary"  routerLink="/register" >Register now</a>
+    </div>
+  </form>
+</div>
+  
+</div>

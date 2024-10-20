@@ -1,0 +1,9 @@
+.card-outline {
+    border: 2px solid #28a745; /* Bootstrap's green color */
+    transition: box-shadow 0.3s;
+  }
+  
+  .card-outline:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow on hover */
+  }
+  
